@@ -23,6 +23,14 @@ public class SinglyLinkedList<E> {
         return length;
     }
 
+    public E first() {
+        if (size() == 0) {
+            return null;
+        }
+        E elem = head.value;
+        return elem;
+    }
+
     public void printList() {
         Node<E> temp = head;
         while (temp != null) {
