@@ -7,8 +7,8 @@ package io.datastructures.stacks;
  */
 public class ReverseArrayTest {
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5, 6, 7};
-        LinkedListStack<Integer> stack = new LinkedListStack<>();
+        String[] nums = {"Jack", "Kate", "Hurley", "Jin", "Michael"};
+        LinkedListStack<String> stack = new LinkedListStack<>();
 
         for (int i = 0; i < nums.length; i++) {
             stack.push(nums[i]);
@@ -22,5 +22,7 @@ public class ReverseArrayTest {
         for (int i = 0; i < nums.length; i++) {
             System.out.print(nums[i] + " ");
         }
+
+        
     }
 }
