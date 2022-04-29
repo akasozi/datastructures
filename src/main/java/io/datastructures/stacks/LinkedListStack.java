@@ -10,7 +10,7 @@ import io.datastructures.linkedlists.SinglyLinkedList;
 public class LinkedListStack<E> implements Stack<E> {
 
     private SinglyLinkedList<E> data;
-    
+
     public LinkedListStack() {
         data = new SinglyLinkedList<>();
     }
