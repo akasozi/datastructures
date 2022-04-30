@@ -30,7 +30,7 @@ public class PreorderTraversalTest {
          return list;
     }
 
-    // recuirsive!
+    // recursive!
     public static void preorderTraversal(TreeNode root, List<Integer> list) {
         if (root == null) return;
         // root -> left -> right
