@@ -6,9 +6,14 @@ package io.datastructures.queues;
  * @project
  */
 public interface Queue<E> {
-    int size();
-    boolean isEmpty();
-    void enqueue(E elem);
-    E dequeue();
-    E peek();
+
+    public int size();
+
+    public boolean isEmpty();
+
+    public void enqueue(E elem);
+
+    public E dequeue();
+
+    public E peek();
 }

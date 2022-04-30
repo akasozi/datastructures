@@ -1,11 +1,13 @@
 package io.datastructures.queues;
 
+import java.util.Iterator;
+
 /**
  * @author Abu Bizibu
  * @created
  * @project
  */
-public class ArrayQueue<E> implements Queue<E> {
+public class ArrayQueue<E> implements Queue<E>, Iterable<E> {
 
     public static int CAPACITY = 1000;
     private E[] data;
@@ -54,5 +56,21 @@ public class ArrayQueue<E> implements Queue<E> {
             return null;
         }
         return data[f];
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new Iterator<E>() {
+            int index = f;
+            @Override
+            public boolean hasNext() {
+                return index <= sz;
+            }
+
+            @Override
+            public E next() {
+                return data[index++];
+            }
+        };
     }
 }
