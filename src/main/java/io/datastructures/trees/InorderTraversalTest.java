@@ -2,6 +2,7 @@ package io.datastructures.trees;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -18,7 +19,8 @@ public class InorderTraversalTest {
         root.val = 1;
         root.right = new TreeNode(2, new TreeNode(3), null);
         root.left = null;
-        List<Integer> result = inorderTraversal(root);
+        // List<Integer> result = inorderTraversal(root);
+        List<Integer> result = inorderTraversalIterative(root);
         System.out.println(Arrays.toString((Object[])result.toArray()));
     }
 
@@ -34,5 +36,27 @@ public class InorderTraversalTest {
         inorderTraversal(root.left, list);
         list.add(root.val);
         inorderTraversal(root.right, list);
+    }
+
+    public static List<Integer> inorderTraversalIterative(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        LinkedList<TreeNode> stack = new LinkedList<>();
+
+        if (root == null) {
+           return null;
+        }
+        TreeNode current = root;
+        while (!stack.isEmpty() || current != null) {
+            if (current!= null) {
+                stack.addFirst(current);
+                current = current.left;
+            } else {
+                current = stack.removeFirst();
+                list.add(current.val);
+                current = current.right;
+            }
+        }
+
+        return list;
     }
 }

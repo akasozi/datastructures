@@ -1,9 +1,6 @@
 package io.datastructures.trees;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Abu Bizibu
@@ -20,7 +17,8 @@ public class PreorderTraversalTest {
            root.val = 1;
            root.right = new TreeNode(2, new TreeNode(3), null);
            root.left = null;
-           List<Integer> result = preorderTraversal(root);
+           // List<Integer> result = preorderTraversal(root);
+           List<Integer> result = postOrderTraversalIterative(root);
            System.out.println(Arrays.toString((Object[])result.toArray()));
     }
 
@@ -37,5 +35,26 @@ public class PreorderTraversalTest {
         list.add(root.val);
         preorderTraversal(root.left, list);
         preorderTraversal(root.right, list);
+    }
+
+    public static List<Integer> postOrderTraversalIterative(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        if (root != null) {
+            stack.addFirst(root);
+        }
+
+        TreeNode current;
+        while (!stack.isEmpty()) {
+            current = stack.removeFirst();
+            list.add(current.val);
+            if (current.right != null) {
+                stack.addFirst(current.right);
+            }
+            if(current.left != null) {
+                stack.addFirst(current.left);
+            }
+        }
+        return list;
     }
 }
