@@ -1,4 +1,4 @@
-package io.datastructures;
+package io.datastructures.lrucache;
 
 import java.util.HashMap;
 
@@ -108,6 +108,8 @@ public class LRUCache<T> {
              if (tail == null) {
                  return;
              }
+             System.out.println("Deleting key: " + tail.key);
+
              if (head == tail) {
                   head = tail = null;
              }
