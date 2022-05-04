@@ -42,6 +42,7 @@ public class LRUCache<T> {
        if (currentNode != null) {
            currentNode.value = value;
            internalQueue.moveNodeToFront(currentNode);
+           return;
        }
        if (size == capacity) {
            String rearNodeKey = internalQueue.getRearKey();
@@ -49,7 +50,6 @@ public class LRUCache<T> {
            hashMap.remove(rearNodeKey);
            size--;
        }
-
        Node newNode = new Node(key, value);
        hashMap.put(key, newNode);
        internalQueue.insertNodeToFront(newNode);
@@ -123,8 +123,5 @@ public class LRUCache<T> {
             }
             return tail.key;
         }
-
     }
-
-
 }

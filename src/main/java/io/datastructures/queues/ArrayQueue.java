@@ -64,7 +64,7 @@ public class ArrayQueue<E> implements Queue<E>, Iterable<E> {
             int index = f;
             @Override
             public boolean hasNext() {
-                return index <= sz;
+                return index <=  sz;
             }
 
             @Override
