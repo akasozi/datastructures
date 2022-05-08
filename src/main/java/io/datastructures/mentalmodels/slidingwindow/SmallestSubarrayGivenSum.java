@@ -2,7 +2,8 @@ package io.datastructures.mentalmodels.slidingwindow;
 
 /**
  *
- * Find the size of the smallest subarray whose sum greater than or equal to 8
+ * Given an array of positive integers, Find the size of the smallest subarray whose sum greater than or equal to 8
+ * sliding window will work iff all the elements are positive!
  */
 public class SmallestSubarrayGivenSum {
 
