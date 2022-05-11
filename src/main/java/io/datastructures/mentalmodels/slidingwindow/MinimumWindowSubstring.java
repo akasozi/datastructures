@@ -3,6 +3,11 @@ package io.datastructures.mentalmodels.slidingwindow;
 import java.util.HashMap;
 
 /**
+ * Given two strings s and t, return the minimum window in s which will contain
+ * all the characters in t. if there is no such window in s that covers all
+ * the characters in t, return the empty string ""
+ * Input s = "ADOBECODEBANC", t = "ABC".
+ * Output: "BANC"
  *
  */
 public class MinimumWindowSubstring {
