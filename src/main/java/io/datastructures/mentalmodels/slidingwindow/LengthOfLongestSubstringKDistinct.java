@@ -19,22 +19,22 @@ public class LengthOfLongestSubstringKDistinct {
     public static int lengthLongestSubstringKDistinct(String s, int k) {
 
         HashMap<Character, Integer> map = new HashMap<>();
-        int i = 0;
+        int left = 0;
         int maxLength = Integer.MIN_VALUE;
 
-        for (int j = 0; j < s.length(); j++) {
-            char cur = s.charAt(j);
+        for (int right = 0; right < s.length(); right++) {
+            char cur = s.charAt(right);
             map.put(cur, map.getOrDefault(cur, 0) + 1);
 
             while (map.size() > k) {
-                char startChar = s.charAt(i);
+                char startChar = s.charAt(left);
                 map.put(startChar, map.get(startChar) - 1);
                 if (map.get(startChar) == 0) {
                     map.remove(startChar);
                 }
-                i++;
+                left++;
             }
-            maxLength = Math.max(maxLength, j - i + 1);
+            maxLength = Math.max(maxLength, right - left + 1);
         }
 
         return maxLength;
